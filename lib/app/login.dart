@@ -7,6 +7,8 @@ import 'package:myapp/utils.dart';
 import 'listagem-6.dart';
 
 class Scene extends StatelessWidget {
+  TextEditingController usernameController = TextEditingController();
+  TextEditingController passwordController = TextEditingController();
   @override
   Widget build(BuildContext context) {
     double baseWidth = 360;
@@ -19,7 +21,7 @@ class Scene extends StatelessWidget {
         padding:
             EdgeInsets.fromLTRB(101 * fem, 158 * fem, 100 * fem, 206 * fem),
         width: double.infinity,
-        decoration: BoxDecoration(
+        decoration: const BoxDecoration(
           color: Color(0xffffffff),
         ),
         child: Column(
@@ -35,27 +37,31 @@ class Scene extends StatelessWidget {
                   fontSize: 40 * ffem,
                   fontWeight: FontWeight.w400,
                   height: 1.2125 * ffem / fem,
-                  color: Color(0xff000000),
+                  color: const Color(0xff000000),
                 ),
               ),
             ),
             Container(
-              // group1biu (1:7)
+              //\ group1biu (1:7)
               margin: EdgeInsets.fromLTRB(0 * fem, 0 * fem, 0 * fem, 37 * fem),
               width: double.infinity,
               height: 48 * fem,
               decoration: BoxDecoration(
-                color: Color(0xffd9d9d9),
+                color: Color.fromARGB(255, 237, 232, 232),
               ),
               child: Center(
-                child: Text(
-                  'Usuário',
-                  style: SafeGoogleFont(
-                    'Inter',
-                    fontSize: 24 * ffem,
-                    fontWeight: FontWeight.w400,
-                    height: 1.2125 * ffem / fem,
-                    color: Color(0xff000000),
+                child: TextFormField(
+                  textAlign: TextAlign.center,
+                  controller: usernameController,
+                  decoration: InputDecoration(
+                    hintText: "Usuário",
+                    hintStyle: SafeGoogleFont(
+                      'Inter',
+                      fontSize: 24 * ffem,
+                      fontWeight: FontWeight.w400,
+                      height: 1.2125 * ffem / fem,
+                      color: Color.fromARGB(255, 141, 138, 138),
+                    ),
                   ),
                 ),
               ),
@@ -65,18 +71,23 @@ class Scene extends StatelessWidget {
               margin: EdgeInsets.fromLTRB(0 * fem, 0 * fem, 0 * fem, 61 * fem),
               width: double.infinity,
               height: 48 * fem,
-              decoration: BoxDecoration(
-                color: Color(0xffd9d9d9),
+              decoration: const BoxDecoration(
+                color: Color.fromARGB(255, 237, 232, 232),
               ),
               child: Center(
-                child: Text(
-                  'Senha',
-                  style: SafeGoogleFont(
-                    'Inter',
-                    fontSize: 24 * ffem,
-                    fontWeight: FontWeight.w400,
-                    height: 1.2125 * ffem / fem,
-                    color: Color(0xff000000),
+                child: TextFormField(
+                  textAlign: TextAlign.center,
+                  controller: passwordController,
+                  obscureText: true,
+                  decoration: InputDecoration(
+                    hintText: "Senha",
+                    hintStyle: SafeGoogleFont(
+                      'Inter',
+                      fontSize: 24 * ffem,
+                      fontWeight: FontWeight.w400,
+                      height: 1.2125 * ffem / fem,
+                      color: const Color.fromARGB(255, 141, 138, 138),
+                    ),
                   ),
                 ),
               ),
@@ -92,18 +103,18 @@ class Scene extends StatelessWidget {
               child: Container(
                 width: double.infinity,
                 height: 48 * fem,
-                decoration: BoxDecoration(
-                  color: Color(0xff48fa45),
+                decoration: const BoxDecoration(
+                  color: Color.fromARGB(255, 0, 72, 254),
                 ),
                 child: Center(
                   child: Text(
-                    'Continuar',
+                    'Entrar',
                     style: SafeGoogleFont(
                       'Inter',
                       fontSize: 24 * ffem,
                       fontWeight: FontWeight.w400,
                       height: 1.2125 * ffem / fem,
-                      color: Color(0xff000000),
+                      color: const Color.fromARGB(255, 255, 255, 255),
                     ),
                   ),
                 ),

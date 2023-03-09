@@ -10,13 +10,13 @@ class Listagem6 extends StatelessWidget {
     double baseWidth = 360;
     double fem = MediaQuery.of(context).size.width / baseWidth;
     double ffem = fem * 0.97;
-    return Container(
+    return SizedBox(
       width: double.infinity,
       child: Container(
         // listagem6Ped (1:417)
         padding: EdgeInsets.fromLTRB(20 * fem, 10 * fem, 10 * fem, 25 * fem),
         width: double.infinity,
-        decoration: BoxDecoration(
+        decoration: const BoxDecoration(
           color: Color(0xffffffff),
         ),
         child: Column(
@@ -44,7 +44,7 @@ class Listagem6 extends StatelessWidget {
                             fontSize: 24 * ffem,
                             fontWeight: FontWeight.w400,
                             height: 1.2125 * ffem / fem,
-                            color: Color(0xff000000),
+                            color: const Color(0xff000000),
                           ),
                         ),
                       ),
@@ -65,7 +65,7 @@ class Listagem6 extends StatelessWidget {
                             fontSize: 24 * ffem,
                             fontWeight: FontWeight.w400,
                             height: 1.2125 * ffem / fem,
-                            color: Color(0xff000000),
+                            color: const Color(0xff000000),
                           ),
                         ),
                       ),
@@ -86,7 +86,7 @@ class Listagem6 extends StatelessWidget {
                             fontSize: 24 * ffem,
                             fontWeight: FontWeight.w400,
                             height: 1.2125 * ffem / fem,
-                            color: Color(0xff000000),
+                            color: const Color(0xff000000),
                           ),
                         ),
                       ),
@@ -109,7 +109,7 @@ class Listagem6 extends StatelessWidget {
                   fontSize: 24 * ffem,
                   fontWeight: FontWeight.w400,
                   height: 1.2125 * ffem / fem,
-                  color: Color(0xff000000),
+                  color: const Color(0xff000000),
                 ),
               ),
             ),
@@ -124,7 +124,7 @@ class Listagem6 extends StatelessWidget {
                   fontSize: 16 * ffem,
                   fontWeight: FontWeight.w400,
                   height: 1.2125 * ffem / fem,
-                  color: Color(0xff000000),
+                  color: const Color(0xff000000),
                 ),
               ),
             ),
@@ -132,7 +132,7 @@ class Listagem6 extends StatelessWidget {
               // autogroup9wbwSAy (E6LJR2tDZMtfQJwSjD9WBw)
               margin: EdgeInsets.fromLTRB(0 * fem, 0 * fem, 10 * fem, 0 * fem),
               width: 320 * fem,
-              height: 546 * fem,
+              height: 500,
               child: Stack(
                 children: [
                   Positioned(
@@ -144,7 +144,7 @@ class Listagem6 extends StatelessWidget {
                         width: 306 * fem,
                         height: 546 * fem,
                         child: Container(
-                          decoration: BoxDecoration(
+                          decoration: const BoxDecoration(
                             color: Color(0xffd9d9d9),
                           ),
                         ),
@@ -181,7 +181,7 @@ class Listagem6 extends StatelessWidget {
                                       fontSize: 16 * ffem,
                                       fontWeight: FontWeight.w400,
                                       height: 1.2125 * ffem / fem,
-                                      color: Color(0xff000000),
+                                      color: const Color(0xff000000),
                                     ),
                                   ),
                                 ),
@@ -190,7 +190,7 @@ class Listagem6 extends StatelessWidget {
                                   padding: EdgeInsets.fromLTRB(
                                       26 * fem, 0 * fem, 22 * fem, 0 * fem),
                                   height: double.infinity,
-                                  decoration: BoxDecoration(
+                                  decoration: const BoxDecoration(
                                     color: Color(0xff00b432),
                                   ),
                                   child: Text(
@@ -201,7 +201,7 @@ class Listagem6 extends StatelessWidget {
                                       fontSize: 16 * ffem,
                                       fontWeight: FontWeight.w400,
                                       height: 1.2125 * ffem / fem,
-                                      color: Color(0xffffffff),
+                                      color: const Color(0xffffffff),
                                     ),
                                   ),
                                 ),
@@ -225,7 +225,7 @@ class Listagem6 extends StatelessWidget {
                                       width: 29 * fem,
                                       height: 21 * fem,
                                       child: Container(
-                                        decoration: BoxDecoration(
+                                        decoration: const BoxDecoration(
                                           color: Color(0xff526eff),
                                         ),
                                       ),
@@ -267,7 +267,7 @@ class Listagem6 extends StatelessWidget {
                                       width: 27 * fem,
                                       height: 20 * fem,
                                       child: Container(
-                                        decoration: BoxDecoration(
+                                        decoration: const BoxDecoration(
                                           color: Color(0xff1cd618),
                                         ),
                                       ),
@@ -326,7 +326,7 @@ class Listagem6 extends StatelessWidget {
                                       fontSize: 16 * ffem,
                                       fontWeight: FontWeight.w400,
                                       height: 1.2125 * ffem / fem,
-                                      color: Color(0xff000000),
+                                      color: const Color(0xff000000),
                                     ),
                                   ),
                                 ),
@@ -335,7 +335,7 @@ class Listagem6 extends StatelessWidget {
                                   padding: EdgeInsets.fromLTRB(
                                       26 * fem, 0 * fem, 22 * fem, 0 * fem),
                                   height: double.infinity,
-                                  decoration: BoxDecoration(
+                                  decoration: const BoxDecoration(
                                     color: Color(0xff00b432),
                                   ),
                                   child: Text(
@@ -346,7 +346,7 @@ class Listagem6 extends StatelessWidget {
                                       fontSize: 16 * ffem,
                                       fontWeight: FontWeight.w400,
                                       height: 1.2125 * ffem / fem,
-                                      color: Color(0xffffffff),
+                                      color: const Color(0xffffffff),
                                     ),
                                   ),
                                 ),
@@ -370,7 +370,7 @@ class Listagem6 extends StatelessWidget {
                                       width: 29 * fem,
                                       height: 21 * fem,
                                       child: Container(
-                                        decoration: BoxDecoration(
+                                        decoration: const BoxDecoration(
                                           color: Color(0xff526eff),
                                         ),
                                       ),
@@ -412,7 +412,7 @@ class Listagem6 extends StatelessWidget {
                                       width: 27 * fem,
                                       height: 20 * fem,
                                       child: Container(
-                                        decoration: BoxDecoration(
+                                        decoration: const BoxDecoration(
                                           color: Color(0xff1cd618),
                                         ),
                                       ),
@@ -471,7 +471,7 @@ class Listagem6 extends StatelessWidget {
                                       fontSize: 16 * ffem,
                                       fontWeight: FontWeight.w400,
                                       height: 1.2125 * ffem / fem,
-                                      color: Color(0xff000000),
+                                      color: const Color(0xff000000),
                                     ),
                                   ),
                                 ),
@@ -480,7 +480,7 @@ class Listagem6 extends StatelessWidget {
                                   padding: EdgeInsets.fromLTRB(
                                       5 * fem, 0 * fem, 0 * fem, 0 * fem),
                                   height: double.infinity,
-                                  decoration: BoxDecoration(
+                                  decoration: const BoxDecoration(
                                     color: Color(0xffd8d007),
                                   ),
                                   child: Text(
@@ -491,7 +491,7 @@ class Listagem6 extends StatelessWidget {
                                       fontSize: 16 * ffem,
                                       fontWeight: FontWeight.w400,
                                       height: 1.2125 * ffem / fem,
-                                      color: Color(0xffffffff),
+                                      color: const Color(0xffffffff),
                                     ),
                                   ),
                                 ),
@@ -515,7 +515,7 @@ class Listagem6 extends StatelessWidget {
                                       width: 29 * fem,
                                       height: 21 * fem,
                                       child: Container(
-                                        decoration: BoxDecoration(
+                                        decoration: const BoxDecoration(
                                           color: Color(0xff526eff),
                                         ),
                                       ),
@@ -557,7 +557,7 @@ class Listagem6 extends StatelessWidget {
                                       width: 27 * fem,
                                       height: 20 * fem,
                                       child: Container(
-                                        decoration: BoxDecoration(
+                                        decoration: const BoxDecoration(
                                           color: Color(0xff1cd618),
                                         ),
                                       ),
@@ -583,38 +583,6 @@ class Listagem6 extends StatelessWidget {
                             ),
                           ),
                         ],
-                      ),
-                    ),
-                  ),
-                  Positioned(
-                    // popupdesucessoPeV (1:459)
-                    left: 0 * fem,
-                    top: 179 * fem,
-                    child: Container(
-                      width: 320 * fem,
-                      height: 67 * fem,
-                      decoration: BoxDecoration(
-                        color: Color(0xffd9d9d9),
-                        boxShadow: [
-                          BoxShadow(
-                            color: Color(0x3f000000),
-                            offset: Offset(0 * fem, 4 * fem),
-                            blurRadius: 2 * fem,
-                          ),
-                        ],
-                      ),
-                      child: Center(
-                        child: Text(
-                          'Perícia enviada com sucesso!',
-                          textAlign: TextAlign.center,
-                          style: SafeGoogleFont(
-                            'Inter',
-                            fontSize: 16 * ffem,
-                            fontWeight: FontWeight.w400,
-                            height: 1.2125 * ffem / fem,
-                            color: Color(0xff000000),
-                          ),
-                        ),
                       ),
                     ),
                   ),
