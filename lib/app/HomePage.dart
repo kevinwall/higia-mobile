@@ -15,13 +15,12 @@ class _HomePageState extends State<HomePage> {
   @override
   void initState() {
     super.initState();
-    //then retorna um futuro e coloca em list
+    //then retorna um future e coloca em list
     updateList();
   }
 
   void updateList() {
     helper.getAllPericia().then((list) {
-      //atualizando a lista de contatos na tela
       setState(() {
         pericias = list.cast<Pericia>();
       });
