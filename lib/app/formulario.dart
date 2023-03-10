@@ -14,9 +14,9 @@ class _FormularioState extends State<Formulario> {
   Pericia? _editedPericia;
   bool _userEdited = false;
 
-  final _nomeFocus = FocusNode();
+  final _processoFocus = FocusNode();
 
-  TextEditingController nomeController = TextEditingController();
+  TextEditingController processoController = TextEditingController();
 
   @override
   void initState() {
@@ -26,7 +26,7 @@ class _FormularioState extends State<Formulario> {
       _editedPericia = Pericia();
     } else {
       _editedPericia = widget.pericia;
-      nomeController.text = _editedPericia!.name;
+      processoController.text = _editedPericia!.processo;
     }
   }
 
@@ -67,16 +67,17 @@ class _FormularioState extends State<Formulario> {
         onWillPop: _requestPop,
         child: Scaffold(
           appBar: AppBar(
-              title: const Text("INCq1"),
+              title: const Text("INCq.1"),
               backgroundColor: const Color.fromARGB(255, 0, 72, 254),
               centerTitle: true),
           backgroundColor: Colors.white,
           floatingActionButton: FloatingActionButton(
             onPressed: () {
-              if (_editedPericia!.name.isNotEmpty) {
+              if (_editedPericia!.processo.isNotEmpty) {
+                _editedPericia?.status = "Rascunho Salvo";
                 Navigator.pop(context, _editedPericia);
               } else {
-                FocusScope.of(context).requestFocus(_nomeFocus);
+                FocusScope.of(context).requestFocus(_processoFocus);
               }
             },
             backgroundColor: const Color.fromARGB(255, 0, 72, 254),
@@ -98,13 +99,14 @@ class _FormularioState extends State<Formulario> {
                         ),
                       )),
                       TextField(
-                        controller: nomeController,
-                        focusNode: _nomeFocus,
-                        decoration: const InputDecoration(labelText: "Nome"),
+                        controller: processoController,
+                        focusNode: _processoFocus,
+                        decoration:
+                            const InputDecoration(labelText: "Processo"),
                         onChanged: (text) {
                           _userEdited = true;
                           setState(() {
-                            _editedPericia!.name = text;
+                            _editedPericia!.processo = text;
                           });
                         },
                       ),

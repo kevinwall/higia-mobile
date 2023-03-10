@@ -11,13 +11,13 @@ class PericiaHelper {
   //criação do factory para retornar a instância
   factory PericiaHelper() => _instance;
 
-  //Periciahelp.instance
+  //periciahelp.instance
   PericiaHelper.internal();
 
   Database? _db;
 
   Future<Database?> get db async {
-    _db ??= await initDb();
+    if (_db == null) _db = await initDb();
     return _db;
   }
 
@@ -30,15 +30,15 @@ class PericiaHelper {
         onCreate: (Database db, int newerVersion) async {
       await db.execute(
           "CREATE TABLE ${Pericia.periciaTable}(${Pericia.idColumn} INTEGER PRIMARY KEY, "
-          "                                 ${Pericia.nameColumn} TEXT) ");
+          "                                 ${Pericia.processoColumn} TEXT, "
+          "                                 ${Pericia.statusColumn} TEXT)");
     });
   }
 
   Future<Pericia> savePericia(Pericia c) async {
     Database? dbPericia = await db;
-    if (dbPericia != null) {
+    if (dbPericia != null)
       c.id = await dbPericia.insert(Pericia.periciaTable, c.toMap());
-    }
     return c;
   }
 
@@ -48,13 +48,14 @@ class PericiaHelper {
       List<Map> maps = await dbPericia.query(Pericia.periciaTable,
           columns: [
             Pericia.idColumn,
-            Pericia.nameColumn,
+            Pericia.processoColumn,
+            Pericia.statusColumn,
           ],
           where: "${Pericia.idColumn} = ?",
           whereArgs: [id]);
-      if (maps.length > 0) {
+      if (maps.length > 0)
         return Pericia.fromMap(maps.first);
-      } else
+      else
         return null;
     }
     return null;

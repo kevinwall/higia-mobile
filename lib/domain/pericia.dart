@@ -1,21 +1,25 @@
 class Pericia {
   static const String periciaTable = "periciaTable";
   static const String idColumn = "idColumn";
-  static const String nameColumn = "nameColumn";
+  static const String processoColumn = "processoColumn";
+  static const String statusColumn = "statusColumn";
 
   int id = 0;
-  String name = '';
+  String processo = '';
+  String status = '';
 
   Pericia();
 
   Pericia.fromMap(Map map) {
     id = map[idColumn];
-    name = map[nameColumn];
+    processo = map[processoColumn];
+    status = map[statusColumn];
   }
 
   Map<String, Object?> toMap() {
     Map<String, Object?> map = {
-      nameColumn: name,
+      processoColumn: processo,
+      statusColumn: status,
     };
     if (id != 0) map[idColumn] = id;
 
@@ -24,6 +28,6 @@ class Pericia {
 
   @override
   String toString() {
-    return "Pericia(id: $id, name: $name)";
+    return "Pericia(id: ${id}, processo: ${processo}, status: ${status})";
   }
 }

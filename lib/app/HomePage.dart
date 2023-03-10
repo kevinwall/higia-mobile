@@ -85,25 +85,36 @@ class _HomePageState extends State<HomePage> {
     return GestureDetector(
         child: Card(
           child: Padding(
-            padding: const EdgeInsets.all(5.0),
+            padding: const EdgeInsets.all(1.0),
             child: Row(
               children: <Widget>[
                 Container(
-                  width: 50.0,
+                  width: 10.0,
                   height: 50.0,
                   decoration: const BoxDecoration(),
                 ),
                 Padding(
-                  padding: const EdgeInsets.only(left: 1.0),
+                  padding: const EdgeInsets.only(right: 1.0),
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: <Widget>[
-                      //se não existe nome, joga vazio
-                      Text(
-                        pericias[index].id.toString(),
-                        style: const TextStyle(
-                            fontSize: 22.0, fontWeight: FontWeight.bold),
-                      ),
+                      Row(children: [
+                        Text(
+                          pericias[index].processo,
+                          style: const TextStyle(
+                              fontSize: 18.0, fontWeight: FontWeight.bold),
+                        ),
+                        Padding(
+                            padding: const EdgeInsets.only(left: 10.0),
+                            child: Container(
+                              color: Color.fromARGB(255, 164, 179, 5),
+                              child: Text(pericias[index].status,
+                                  style: const TextStyle(
+                                      color: Colors.white,
+                                      fontSize: 18.0,
+                                      fontWeight: FontWeight.bold)),
+                            ))
+                      ]),
                     ],
                   ),
                 ),
