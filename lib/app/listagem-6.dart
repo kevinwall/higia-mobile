@@ -256,40 +256,52 @@ class Listagem6 extends StatelessWidget {
                                 0 * fem, 6 * fem, 0 * fem, 3 * fem),
                             width: 27 * fem,
                             height: double.infinity,
-                            child: Stack(
-                              children: [
-                                Positioned(
-                                  // rectangle5dCq (1:435)
-                                  left: 0 * fem,
-                                  top: 1 * fem,
-                                  child: Align(
-                                    child: SizedBox(
-                                      width: 27 * fem,
-                                      height: 20 * fem,
-                                      child: Container(
-                                        decoration: const BoxDecoration(
-                                          color: Color(0xff1cd618),
-                                        ),
-                                      ),
-                                    ),
-                                  ),
-                                ),
-                                Positioned(
-                                  // 7do (1:436)
-                                  left: 4 * fem,
-                                  top: 0 * fem,
-                                  child: Align(
-                                    child: SizedBox(
-                                      width: 23 * fem,
-                                      height: 21 * fem,
-                                      child: Image.asset(
-                                        'assets/app/images/-cyK.png',
-                                        fit: BoxFit.cover,
-                                      ),
-                                    ),
-                                  ),
-                                ),
-                              ],
+                            child: TextButton(
+                              child: Text(''),
+                              style: TextButton.styleFrom(
+                                backgroundColor: Color.fromARGB(255, 0, 255, 8),
+                              ),
+                              onPressed: () {
+                                showDialog(
+                                    context: context,
+                                    builder: (context) => AlertDialog(
+                                          title: Text('Confirmação'),
+                                          content: Text(
+                                              'Deseja enviar esta perícia ao PJE?'),
+                                          actions: [
+                                            TextButton(
+                                              child: Text('Cancelar'),
+                                              onPressed: () =>
+                                                  Navigator.pop(context),
+                                            ),
+                                            TextButton(
+                                                child: Text('Enviar'),
+                                                onPressed: () {
+                                                  showDialog(
+                                                      context: context,
+                                                      builder: (context) =>
+                                                          AlertDialog(
+                                                            title: Text(
+                                                                'Sucesso!!!'),
+                                                            content: Text(
+                                                                'Sua perícia foi enviada com sucesso!!!'),
+                                                            actions: [
+                                                              TextButton(
+                                                                  onPressed:
+                                                                      () {
+                                                                    Navigator.pop(
+                                                                        context);
+                                                                    Navigator.pop(
+                                                                        context);
+                                                                  },
+                                                                  child: Text(
+                                                                      'Confirmar'))
+                                                            ],
+                                                          ));
+                                                })
+                                          ],
+                                        ));
+                              },
                             ),
                           ),
                         ],
