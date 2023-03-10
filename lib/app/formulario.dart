@@ -89,28 +89,31 @@ class _FormularioState extends State<Formulario> {
                 children: <Widget>[
                   Container(
                     color: const Color.fromARGB(255, 163, 189, 255),
-                    child: Column(children: <Widget>[
-                      const Center(
-                          child: Padding(
-                        padding: EdgeInsets.only(top: 10.0),
-                        child: Text(
-                          "Informações iniciais",
-                          style: TextStyle(fontSize: 20),
+                    child: Padding(
+                      padding: EdgeInsets.all(30.0),
+                      child: Column(children: <Widget>[
+                        const Center(
+                            child: Padding(
+                          padding: EdgeInsets.only(top: 10.0),
+                          child: Text(
+                            "Informações iniciais",
+                            style: TextStyle(fontSize: 20),
+                          ),
+                        )),
+                        TextField(
+                          controller: processoController,
+                          focusNode: _processoFocus,
+                          decoration:
+                              const InputDecoration(labelText: "Processo"),
+                          onChanged: (text) {
+                            _userEdited = true;
+                            setState(() {
+                              _editedPericia!.processo = text;
+                            });
+                          },
                         ),
-                      )),
-                      TextField(
-                        controller: processoController,
-                        focusNode: _processoFocus,
-                        decoration:
-                            const InputDecoration(labelText: "Processo"),
-                        onChanged: (text) {
-                          _userEdited = true;
-                          setState(() {
-                            _editedPericia!.processo = text;
-                          });
-                        },
-                      ),
-                    ]),
+                      ]),
+                    ),
                   ),
                 ],
               )),
