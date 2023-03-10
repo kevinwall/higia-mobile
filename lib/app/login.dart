@@ -2,9 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter/gestures.dart';
 import 'dart:ui';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:myapp/app/listagem-5.dart';
 import 'package:myapp/utils.dart';
-import 'listagem-6.dart';
+import 'HomePage.dart';
 
 class Scene extends StatelessWidget {
   TextEditingController usernameController = TextEditingController();
@@ -128,6 +127,6 @@ class Scene extends StatelessWidget {
 
   void _showListagem1(BuildContext context) async {
     await Navigator.push(
-        context, MaterialPageRoute(builder: (context) => Listagem6()));
+        context, MaterialPageRoute(builder: (context) => HomePage()));
   }
 }
