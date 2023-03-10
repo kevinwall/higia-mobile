@@ -133,23 +133,12 @@ class _HomePageState extends State<HomePage> {
                     Padding(
                         padding: const EdgeInsets.all(10.0),
                         child: TextButton(
-                            child: const Text("editar",
+                            child: const Text("Editar",
                                 style: TextStyle(
                                     color: Colors.lightBlue, fontSize: 20.0)),
                             onPressed: () {
                               Navigator.pop(context);
                               _showPericiaPage(pericia: pericias[index]);
-                            })),
-                    Padding(
-                        padding: const EdgeInsets.all(10.0),
-                        child: TextButton(
-                            child: const Text("excluir",
-                                style: TextStyle(
-                                    color: Colors.lightBlue, fontSize: 20.0)),
-                            onPressed: () {
-                              helper.deletePericia(pericias[index].id);
-                              updateList();
-                              Navigator.pop(context);
                             })),
                     Padding(
                         padding: const EdgeInsets.all(10.0),
@@ -197,6 +186,17 @@ class _HomePageState extends State<HomePage> {
                                         ],
                                       ));
                             })),
+                    Padding(
+                        padding: const EdgeInsets.all(10.0),
+                        child: TextButton(
+                            child: const Text("Excluir",
+                                style: TextStyle(
+                                    color: Colors.lightBlue, fontSize: 20.0)),
+                            onPressed: () {
+                              helper.deletePericia(pericias[index].id);
+                              updateList();
+                              Navigator.pop(context);
+                            }))
                   ],
                 ),
               );
