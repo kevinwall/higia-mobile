@@ -30,6 +30,32 @@ class _HomePageState extends State<HomePage> {
 
   @override
   Widget build(BuildContext context) {
+    if (pericias.isEmpty) {
+      return Scaffold(
+          appBar: AppBar(
+            title: const Text("Lista de Perícias"),
+            backgroundColor: const Color.fromARGB(255, 0, 72, 254),
+          ),
+          floatingActionButton: FloatingActionButton(
+            onPressed: () {
+              _showPericiaPage();
+            },
+            backgroundColor: const Color.fromARGB(255, 0, 72, 254),
+            child: const Icon(Icons.add),
+          ),
+          body: Padding(
+              padding: const EdgeInsets.all(35),
+              child: Container(
+                color: const Color.fromARGB(200, 200, 200, 200),
+                height: 700,
+                child: const Padding(
+                    padding: const EdgeInsets.all(10),
+                    child: Text(
+                      "Nenhuma perícia iniciada ainda...",
+                      style: TextStyle(fontSize: 23.0),
+                    )),
+              )));
+    }
     return Scaffold(
         appBar: AppBar(
           title: const Text("Lista de Perícias"),
@@ -124,7 +150,53 @@ class _HomePageState extends State<HomePage> {
                               helper.deletePericia(pericias[index].id);
                               updateList();
                               Navigator.pop(context);
-                            }))
+                            })),
+                    Padding(
+                        padding: const EdgeInsets.all(10.0),
+                        child: TextButton(
+                            child: const Text("Enviar",
+                                style: TextStyle(
+                                    color: Colors.lightBlue, fontSize: 20.0)),
+                            onPressed: () {
+                              showDialog(
+                                  context: context,
+                                  builder: (context) => AlertDialog(
+                                        title: Text('Confirmação'),
+                                        content: Text(
+                                            'Deseja enviar esta perícia ao PJE?'),
+                                        actions: [
+                                          TextButton(
+                                            child: Text('Cancelar'),
+                                            onPressed: () =>
+                                                Navigator.pop(context),
+                                          ),
+                                          TextButton(
+                                              child: Text('Enviar'),
+                                              onPressed: () {
+                                                showDialog(
+                                                    context: context,
+                                                    builder: (context) =>
+                                                        AlertDialog(
+                                                          title: Text(
+                                                              'Sucesso!!!'),
+                                                          content: Text(
+                                                              'Sua perícia foi enviada com sucesso!!!'),
+                                                          actions: [
+                                                            TextButton(
+                                                                onPressed: () {
+                                                                  Navigator.pop(
+                                                                      context);
+                                                                  Navigator.pop(
+                                                                      context);
+                                                                },
+                                                                child: Text(
+                                                                    'Confirmar'))
+                                                          ],
+                                                        ));
+                                              })
+                                        ],
+                                      ));
+                            })),
                   ],
                 ),
               );
@@ -142,7 +214,6 @@ class _HomePageState extends State<HomePage> {
     } else {
       await helper.updatePericia(periciaRet);
     }
-
     updateList();
   }
 }
