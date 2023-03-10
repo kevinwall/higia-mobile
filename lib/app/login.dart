@@ -126,7 +126,7 @@ class Scene extends StatelessWidget {
   }
 
   void _showListagem1(BuildContext context) async {
-    await Navigator.push(
+    await Navigator.pushReplacement(
         context, MaterialPageRoute(builder: (context) => HomePage()));
   }
 }

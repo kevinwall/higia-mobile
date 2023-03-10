@@ -1,9 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/gestures.dart';
-import 'dart:ui';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:myapp/domain/pericia.dart';
-import 'package:myapp/utils.dart';
 
 class Formulario extends StatefulWidget {
   Pericia? pericia;
@@ -40,16 +36,16 @@ class _FormularioState extends State<Formulario> {
           context: context,
           builder: (context) {
             return AlertDialog(
-              title: Text("Abandonar alteração?"),
-              content: Text("Os dados serão perdidos."),
+              title: const Text("Abandonar alteração?"),
+              content: const Text("Os dados serão perdidos."),
               actions: <Widget>[
                 TextButton(
-                    child: Text("cancelar"),
+                    child: const Text("cancelar"),
                     onPressed: () {
                       Navigator.pop(context);
                     }),
                 TextButton(
-                  child: Text("sim"),
+                  child: const Text("sim"),
                   onPressed: () {
                     //desempilha 2x
                     Navigator.pop(context);
@@ -71,8 +67,8 @@ class _FormularioState extends State<Formulario> {
         onWillPop: _requestPop,
         child: Scaffold(
           appBar: AppBar(
-              title: Text("INCq1"),
-              backgroundColor: Color.fromARGB(255, 0, 72, 254),
+              title: const Text("INCq1"),
+              backgroundColor: const Color.fromARGB(255, 0, 72, 254),
               centerTitle: true),
           backgroundColor: Colors.white,
           floatingActionButton: FloatingActionButton(
@@ -83,23 +79,36 @@ class _FormularioState extends State<Formulario> {
                 FocusScope.of(context).requestFocus(_nomeFocus);
               }
             },
-            child: Icon(Icons.save),
-            backgroundColor: Color.fromARGB(255, 0, 72, 254),
+            backgroundColor: const Color.fromARGB(255, 0, 72, 254),
+            child: const Icon(Icons.save),
           ),
           body: SingleChildScrollView(
-              padding: EdgeInsets.all(10.0),
+              padding: const EdgeInsets.all(10.0),
               child: Column(
                 children: <Widget>[
-                  TextField(
-                    controller: nomeController,
-                    focusNode: _nomeFocus,
-                    decoration: InputDecoration(labelText: "Nome"),
-                    onChanged: (text) {
-                      _userEdited = true;
-                      setState(() {
-                        _editedPericia!.name = text;
-                      });
-                    },
+                  Container(
+                    color: const Color.fromARGB(255, 163, 189, 255),
+                    child: Column(children: <Widget>[
+                      const Center(
+                          child: Padding(
+                        padding: EdgeInsets.only(top: 10.0),
+                        child: Text(
+                          "Informações iniciais",
+                          style: TextStyle(fontSize: 20),
+                        ),
+                      )),
+                      TextField(
+                        controller: nomeController,
+                        focusNode: _nomeFocus,
+                        decoration: const InputDecoration(labelText: "Nome"),
+                        onChanged: (text) {
+                          _userEdited = true;
+                          setState(() {
+                            _editedPericia!.name = text;
+                          });
+                        },
+                      ),
+                    ]),
                   ),
                 ],
               )),

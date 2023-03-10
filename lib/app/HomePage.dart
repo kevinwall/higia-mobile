@@ -1,11 +1,6 @@
-import 'dart:io';
 import 'package:flutter/material.dart';
-import 'package:flutter/gestures.dart';
-import 'dart:ui';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:myapp/app/formulario.dart';
 import 'package:myapp/domain/pericia.dart';
-import 'package:myapp/utils.dart';
 
 import '../helpers/periciaHelper.dart';
 
@@ -35,52 +30,52 @@ class _HomePageState extends State<HomePage> {
 
   @override
   Widget build(BuildContext context) {
-    double baseWidth = 360;
-    double fem = MediaQuery.of(context).size.width / baseWidth;
-    double ffem = fem * 0.97;
     return Scaffold(
-      /*appBar: AppBar(
-          backgroundColor: Color.fromARGB(255, 0, 72, 254),
-        ),*/
-      floatingActionButton: FloatingActionButton(
-        onPressed: () {
-          _showPericiaPage();
-        },
-        child: Icon(Icons.add),
-        backgroundColor: Color.fromARGB(255, 0, 72, 254),
-      ),
-      body: ListView.builder(
-          padding: EdgeInsets.all(10.0),
-          itemCount: pericias.length,
-          itemBuilder: (context, index) {
-            return _periciaCard(context, index);
-          }),
-    );
+        appBar: AppBar(
+          title: const Text("Lista de Perícias"),
+          backgroundColor: const Color.fromARGB(255, 0, 72, 254),
+        ),
+        floatingActionButton: FloatingActionButton(
+          onPressed: () {
+            _showPericiaPage();
+          },
+          backgroundColor: const Color.fromARGB(255, 0, 72, 254),
+          child: const Icon(Icons.add),
+        ),
+        body: Padding(
+            padding: const EdgeInsets.all(35),
+            child: Container(
+              color: const Color.fromARGB(200, 200, 200, 200),
+              child: ListView.builder(
+                  padding: const EdgeInsets.all(10.0),
+                  itemCount: pericias.length,
+                  itemBuilder: (context, index) {
+                    return _periciaCard(context, index);
+                  }),
+            )));
   }
 
   Widget _periciaCard(BuildContext context, int index) {
     return GestureDetector(
         child: Card(
           child: Padding(
-            padding: EdgeInsets.all(10.0),
+            padding: const EdgeInsets.all(5.0),
             child: Row(
               children: <Widget>[
                 Container(
-                  width: 80.0,
-                  height: 80.0,
-                  decoration: BoxDecoration(
-                    shape: BoxShape.circle,
-                  ),
+                  width: 50.0,
+                  height: 50.0,
+                  decoration: const BoxDecoration(),
                 ),
                 Padding(
-                  padding: EdgeInsets.only(left: 10.0),
+                  padding: const EdgeInsets.only(left: 1.0),
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: <Widget>[
                       //se não existe nome, joga vazio
                       Text(
                         pericias[index].id.toString(),
-                        style: TextStyle(
+                        style: const TextStyle(
                             fontSize: 22.0, fontWeight: FontWeight.bold),
                       ),
                     ],
@@ -104,15 +99,15 @@ class _HomePageState extends State<HomePage> {
             onClosing: () {},
             builder: (context) {
               return Container(
-                padding: EdgeInsets.all(10.0),
+                padding: const EdgeInsets.all(10.0),
                 child: Column(
                   //ocupa o mínimo de espaço.
                   mainAxisSize: MainAxisSize.min,
                   children: <Widget>[
                     Padding(
-                        padding: EdgeInsets.all(10.0),
+                        padding: const EdgeInsets.all(10.0),
                         child: TextButton(
-                            child: Text("editar",
+                            child: const Text("editar",
                                 style: TextStyle(
                                     color: Colors.lightBlue, fontSize: 20.0)),
                             onPressed: () {
@@ -120,9 +115,9 @@ class _HomePageState extends State<HomePage> {
                               _showPericiaPage(pericia: pericias[index]);
                             })),
                     Padding(
-                        padding: EdgeInsets.all(10.0),
+                        padding: const EdgeInsets.all(10.0),
                         child: TextButton(
-                            child: Text("excluir",
+                            child: const Text("excluir",
                                 style: TextStyle(
                                     color: Colors.lightBlue, fontSize: 20.0)),
                             onPressed: () {
